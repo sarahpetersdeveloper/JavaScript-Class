@@ -17,6 +17,6 @@
     
     
 
-P.S. Pull request will be displayed [here](/pulls), so you can see how many people completed the assignment.
+P.S. Pull request will be displayed [here](https://github.com/Kilavagora/JavaScript-Class/pulls), so you can see how many people completed the assignment.
 
 
