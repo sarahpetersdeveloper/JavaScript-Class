@@ -7,7 +7,7 @@ Class -2. HTML/CSS Basics
 5. CSS basics
 
 Resources:
-[MDN](https://developer.mozilla.org/en-US/docs/Web Mozilla Developer Network)
+[MDN](https://developer.mozilla.org/en-US/docs/Web "Mozilla Developer Network")
 
 [HTML Validator](https://validator.w3.org/)
 
