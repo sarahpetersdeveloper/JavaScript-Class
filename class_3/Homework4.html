@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+      //Create an array consisting of Chinese zodiac elements. Ask a user to enter a year.
+      //Display the sign that is assigned to the year.
+      let zodiac = ["Monkey", "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat"];
+
+      let birthday = prompt("What is your birth year?");
+
+      echo("You are " + zodiac[parseInt(birthday) % 12]);
+ </script>
+</body>
+</html>

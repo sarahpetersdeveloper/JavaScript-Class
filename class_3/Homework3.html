@@ -10,11 +10,70 @@
 
  </div>
  <script>
-      var birthday = prompt("When is your birthday (must be like Dec 31, 2017)?");
-      var daysFromNewYear = Math.round(Math.abs((birthday.getTime() - new Date("Jan 1, 2017").getTime())/(oneDay)));
+      //Ask user to enter his date of birth. Display the user's astrological sign
+      let birthday = new Date(prompt("When is your birthday (must be like Dec 31, 2017)?"));
 
+      //get days passed from new years
+      var ONE_DAY = 1000 * 60 * 60 * 24; //one day in ms
+      let msFromNewYear = Math.abs(birthday.getTime() -  new Date("Jan 1, " + birthday.getYear()).getTime());
+      let daysFromNewYear = Math.round((msFromNewYear / ONE_DAY) + 1); //because Jan 1 is 1 day from New Years
 
-      echo(dayFromNewYear);
+      if(daysFromNewYear > 1 && daysFromNewYear <= 19)
+      {
+        echo("You are a Capricorn");
+      }
+      else if (daysFromNewYear > 19 && daysFromNewYear <= 49)
+      {
+        echo("You are a Aquarius");
+      }
+      else if ( daysFromNewYear > 49 && daysFromNewYear <= 79)
+      {
+        echo("You are a Pisces")
+      }
+      else if ( daysFromNewYear > 79 && daysFromNewYear <= 109)
+      {
+        echo("You are a Aries")
+      }
+      else if (daysFromNewYear > 109 && daysFromNewYear <= 139)
+      {
+        echo("You are a Taurus")
+      }
+      else if (daysFromNewYear > 139 && daysFromNewYear <= 169)
+      {
+        echo("You are a Gemini")
+      }
+      else if (daysFromNewYear > 139 && daysFromNewYear <= 199)
+      {
+        echo("You are a Cancer")
+      }
+      else if (daysFromNewYear > 139 && daysFromNewYear <= 229)
+      {
+        echo("You are a Leo")
+      }
+      else if (daysFromNewYear > 229 && daysFromNewYear <= 259)
+      {
+        echo("You are a Virgo")
+      }
+      else if (daysFromNewYear > 259 && daysFromNewYear <= 289)
+      {
+        echo("You are a Libra")
+      }
+      else if (daysFromNewYear > 289 && daysFromNewYear <= 319)
+      {
+        echo("You are a Scorpio")
+      }
+      else if (daysFromNewYear > 319 && daysFromNewYear <= 349)
+      {
+        echo("You are a Sagittarius")
+      }
+      else if (daysFromNewYear > 349 && daysFromNewYear <= 365)
+      {
+        echo("You are a Capricorn")
+      }
+      else
+      {
+        echo("Unable to determine your zodiac sign");
+      }
  </script>
 </body>
 </html>
