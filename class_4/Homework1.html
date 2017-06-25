@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+ //(5 pts) Define a function that returns true if its argument is a palindrome,
+ //otherwise returns false. The function should work for strings and numbers.
+ //Verify the function with a few random examples and display the results.
+
+
+ echo("madam is a palindrome: " + isAPalindrome("madam"));
+ echo("tacocat is a palindrome: " + isAPalindrome("tacocat"));
+ echo("543212345 is a palindrome: " + isAPalindrome("543212345"));
+ echo("abcdef is a palindrome: " + isAPalindrome("abcdef"));
+
+
+ function isAPalindrome(p1)
+ {
+   //if is a number convert to string
+   if(typeof(p1) == 'number')
+   {
+     p1 += '';
+   }
+
+   //create an array
+   var p1Array = p1.split('');
+
+   //use pointers to check until you reach the center of the array
+   var isPalindrom = true;
+   var start = 0;
+   var end = p1Array.length - 1;
+
+   while(start != end || start > end)
+   {
+     if(p1Array[start] != (p1Array[end]))
+     {
+       isPalindrom = false;
+       break;
+     }
+     start++;
+     end --;
+   }
+
+   return isPalindrom;
+ }
+
+ </script>
+</body>
+</html>

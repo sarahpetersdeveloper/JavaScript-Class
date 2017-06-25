@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+ //Define a function that takes an integer as an argument and returns true
+ //if the argument is a prime number and false otherwise. Write a loop that
+ //displays numbers from 1 to 100 inclusive and whether it is a prime (
+ //i.e. 1 false, 2 true, 3 true and etc.).
+
+  for(let i = 1; i <= 100; i++)
+  {
+    echo( i + " is a prime: " + isAPrime(parseInt(i)));
+  }
+
+  function isAPrime(number)
+  {
+    if(number == 1)
+    {
+      return true;
+    }
+
+    var counter = 2;
+    var isPrime = true;
+    while( counter <= Math.floor(Math.sqrt(number)))
+    {
+      if(number % counter == 0)
+      {
+        isPrime = false;
+      }
+      counter++;
+    }
+
+    return isPrime;
+  }
+
+ </script>
+</body>
+</html>

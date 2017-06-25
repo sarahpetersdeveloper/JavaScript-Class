@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+   //Do above, but instead of multiplication use the function defined in 2.
+
+
+   for(var i = 0; i <= 100; i++)
+   {
+     echo("The square of " + i + " is " + product(i,i));
+   }
+
+   function product( x, y)
+   {
+     let product = 0;
+     for(var i = 1; i <= x; i++)
+     {
+       product += y;
+     }
+
+     return product;
+   }
+ </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+
+ //Write a function that takes two integers and
+ //returns their product. The product should be
+ //calculated with a loop using only addition.
+   echo("The product of 5 and 6 is "+ product(parseInt(5), parseInt(6)));
+
+   function product( x, y)
+   {
+     let product = 0;
+     for(var i = 1; i <= x; i++)
+     {
+       product += y;
+     }
+
+     return product;
+   }
+ </script>
+</body>
+</html>
