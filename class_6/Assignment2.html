@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+
+
+ let inpArray = [1, 2, 2, 3, 4, 2, 2, 4];
+ let undupArray = clearDups(inpArray);
+ echo("The array is " + inpArray);
+ echo("The unduplicated array is: " + undupArray); // Should output Array [1, 2, 3, 4, 2, 4]
+
+ let inpArray1 = [1, 3, 5, 5, 7, 2, 2, 2, 2];
+ let undupArray1 = clearDups(inpArray1);
+ echo("The array is " + inpArray1);
+ echo("The unduplicated array is: " + undupArray1);
+
+ let inpArray2 = [1, 1, 8, 8, 9, 9, 4, 4];
+ let undupArray2 = clearDups(inpArray2);
+ echo("The array is " + inpArray2);
+ echo("The unduplicated array is: " + undupArray2);
+
+  function clearDups(inpArray)
+  {
+    var resultArray = [];
+
+    for(var i = 0; i < inpArray.length - 1; i++)
+    {
+      if(inpArray[i] != inpArray[i + 1])
+      {
+        resultArray.push(inpArray[i]);
+      }
+    }
+    resultArray.push(inpArray[inpArray.length - 1]); //always push the last one because the loop skips it
+
+    return resultArray;
+  }
+ </script>
+</body>
+</html>

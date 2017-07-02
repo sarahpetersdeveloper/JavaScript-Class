@@ -29,7 +29,7 @@
   function Movie(movieName)
   {
     this.title = movieName;
-    this.ratings = [0];
+    this.ratings = [];
     this.avgRating = 0;
 
     this.addRating = function (ratingIn)
@@ -38,8 +38,8 @@
         var sum = 0;
         for(var i = 0; i < this.ratings.length; i++)
         {
-          echo(ratings[i]);
-          sum += ratings[i];
+          //echo(ratings[i]);
+          sum += this.ratings[i];
 
         }
         this.avgRating = sum / (this.ratings.length - 1);

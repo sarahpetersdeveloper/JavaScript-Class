@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+ //Define a function charCount that takes a string as an argument and returns an object containing character count of letters.
+let result = charCount("Pack my box with five dozen liquor jugs.");
+let aCount = result.a;
+let iCount = result.i;
+let spaceCount = result[' '];
+echo("count of 'a' " + aCount); // Should output 1
+echo("count of 'i' " + iCount);
+echo("count of space " + spaceCount); // Should output 7
+
+  function charCount(str)
+  {
+    let counts = {};
+    for(let i = 0; i < str.length; i++)
+    {
+      let char = str.charAt(i);
+      if(counts[char])
+      {
+        counts[char]++;
+      }
+      else
+      {
+        counts[char] = 1;
+      }
+    }
+    return counts;
+  }
+ </script>
+</body>
+</html>
