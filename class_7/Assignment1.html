@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <title>A sample page</title>
+  <script src="helper.js"></script>
+</head>
+
+<body>
+  <div id="main">
+
+  </div>
+  <script>
+    //1. (5 pts) Ask a user to enter a year. Display chinese zodia sign that is assigned to the year and
+    //also a few subsequent years of that sign. Use switch statement.
+
+    let birthday = prompt("Please enter a year?");
+    echo("you are a " + ZodiacSign(birthday));
+    echo("the following years are " + ZodiacSign(birthday + 1) + " and " + ZodiacSign(birthday + 2));
+
+
+    function ZodiacSign(year) {
+      let zodiac;
+      switch (year % 12) {
+        case 0:
+          zodiac = "Monkey";
+          break;
+        case 1:
+          zodiac = "Rooster";
+          break;
+        case 2:
+          zodiac = "Dog";
+          break;
+        case 3:
+          zodiac = "Pig";
+          break;
+        case 4:
+          zodiac = "Rat";
+          break;
+        case 5:
+          zodiac = "Ox";
+          break;
+        case 6:
+            zodiac = "Tiger";
+            break;
+        case 7:
+          zodiac = "Rabbit";
+          break;
+        case 8:
+          zodiac = "Dragon";
+          break;
+        case 9:
+          zodiac = "Snake";
+          break;
+        case 10:
+          zodiac = "Horse";
+          break;
+        case 11:
+          zodiac = "Goat";
+          break;
+        deafult:
+          zodiac = "no sign";
+            break;
+      }
+      return zodiac;
+    }
+  </script>
+</body>
+
+</html>
