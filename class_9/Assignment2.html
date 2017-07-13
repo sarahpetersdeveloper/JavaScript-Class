@@ -103,11 +103,8 @@
     </div>
     <script>
     (function () {
-      var images = document.querySelectorAll("img");
-      for(var i = 0; i < images.length ; i ++)
-      {
-        images[i].title = images[i].alt;
-      }
+      var node =  document.querySelector("p").lastChild;
+      node.textContent = " " + new Date();
     }) ();
     </script>
 </body>
