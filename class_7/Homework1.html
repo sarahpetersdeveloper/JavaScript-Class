@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <title>A sample page</title>
+  <script src="helper.js"></script>
+</head>
+
+<body>
+  <div id="main">
+
+  </div>
+  <script>
+    //With the separate prompts ask user to enter name, email, birth day and then
+    //password twice. Do simple validation for email and prompt again unless input
+    //contains @ symbol. If passwords do not match, ask again until they do.
+    //If user age is less than 13 years,
+    //display "To register one must be 13 years or older".
+    //Otherwise, using constructor function create an object with user details.
+    //Display "Successfully created account for " and show entered account information.
+
+    let name = prompt("enter your name:");
+
+    let email;
+    email = prompt("Enter an email:");
+    while( ! email.includes("@"))
+    {
+         email = prompt("Email must include a '@', please re-enter: ");
+    }
+
+    let age = new Date(prompt("enter your date of birth like 'Dec 31, 2017': "));
+    while(calculateAge(age) < 13)
+    {
+      age = new Date(prompt("To register one must be 13 years or older, enter your date of birth like 'Dec 31, 2017': "));
+    }
+
+    let password1;
+    let password2;
+    password1 = prompt("Please enter your password: ");
+    password2 = prompt("Please re-type your password for validation: ")
+    while(password1 != password2)
+    {
+      password1 = prompt("Passwords do not match, please re-enter:")
+      password2 = prompt("Please re-type your password for validation: ")
+    }
+
+    var account = new account(name, email, age, password1);
+    echo("Account successfully created" + JSON.stringify(account, null, 4));
+
+    function calculateAge(birthday) { // birthday is a date
+      var ageDifMs = Date.now() - birthday.getTime();
+      var ageDate = new Date(ageDifMs); // miliseconds from epoch
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
+    function account(name, email, age, password) {
+    this.name = name;
+    this.email = email;
+    this.age = age;
+    this.password = password;
+}
+  </script>
+</body>
+
+</html>
