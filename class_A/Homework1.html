@@ -153,9 +153,40 @@ navigation">
     (function() {
       var myDropdown = document.querySelector(".nav-item.dropdown");
       myDropdown.addEventListener("click", function() {
-          event.preventDefault();
-          myDropdown.classList.add("show");
-        })
+        event.preventDefault();
+        myDropdown.classList.add("show");
+      })
+    })();
+
+    (function() {
+
+      let tabs = document.querySelectorAll(".nav-link[role='tab']");
+      let panes = document.querySelectorAll(".tab-pane");
+
+      left.addEventListener("click", function() {
+        tabs[0].classList.add("active");
+        panes[0].classList.add("active");
+        tabs[1].classList.remove("active");
+        panes[1].classList.remove("active");
+        tabs[2].classList.remove("active");
+        panes[2].classList.remove("active");
+      });
+      middle.addEventListener("click", function() {
+        tabs[0].classList.remove("active");
+        panes[0].classList.remove("active");
+        tabs[1].classList.add("active");
+        panes[1].classList.add("active");
+        tabs[2].classList.remove("active");
+        panes[2].classList.remove("active");
+      });
+      right.addEventListener("click", function() {
+        tabs[0].classList.remove("active");
+        panes[0].classList.remove("active");
+        tabs[1].classList.remove("active");
+        panes[1].classList.remove("active");
+        tabs[2].classList.add("active");
+        panes[2].classList.add("active");
+      });
     })();
   </script>
 </body>
