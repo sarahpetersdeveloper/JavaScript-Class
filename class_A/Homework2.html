@@ -130,78 +130,53 @@ navigation">
     // (3 pts) Add an event listener to activate the dropdown. The function needs to toggle class "show" on click
     //from navigation item with class "nav-item dropdown".
 
-    (function() {
       var myButton = document.querySelector("#bigbutton");
       var myModal = document.querySelector(".modal");
       myButton.addEventListener("click", function() {
         myModal.style = "display: block";
-      })
-    })();
-
-    (function() {
+      });
       var closeXButton = document.querySelector("#closeX");
       var closeButton = document.querySelector("#closeButton");
-      var myModal = document.querySelector(".modal");
+
       closeXButton.addEventListener("click", function() {
         myModal.style = "display: none";
-      })
+      });
+
       closeButton.addEventListener("click", function() {
         myModal.style = "display: none";
-      })
-    })();
+      });
 
-    (function() {
       var myDropdown = document.querySelector(".nav-item.dropdown");
       myDropdown.addEventListener("click", function() {
         event.preventDefault();
         myDropdown.classList.add("show");
-      })
-    })();
+      });
 
-    (function() {
-      var myDropdown = document.querySelector(".nav-item.dropdown");
+
       myDropdown.addEventListener("mouseover", function() {
         myDropdown.classList.add("show");
-      })
-    })();
+      });
 
-    (function() {
-      var myDropdown = document.querySelector(".nav-item.dropdown");
+
       myDropdown.addEventListener("mouseout", function() {
         myDropdown.classList.remove("show");
-      })
-    })();
-
-    (function() {
-
-      let tabs = document.querySelectorAll(".nav-link[role='tab']");
-      let panes = document.querySelectorAll(".tab-pane");
-
-      left.addEventListener("click", function() {
-        tabs[0].classList.add("active");
-        panes[0].classList.add("active");
-        tabs[1].classList.remove("active");
-        panes[1].classList.remove("active");
-        tabs[2].classList.remove("active");
-        panes[2].classList.remove("active");
       });
-      middle.addEventListener("click", function() {
-        tabs[0].classList.remove("active");
-        panes[0].classList.remove("active");
-        tabs[1].classList.add("active");
-        panes[1].classList.add("active");
-        tabs[2].classList.remove("active");
-        panes[2].classList.remove("active");
-      });
-      right.addEventListener("click", function() {
-        tabs[0].classList.remove("active");
-        panes[0].classList.remove("active");
-        tabs[1].classList.remove("active");
-        panes[1].classList.remove("active");
-        tabs[2].classList.add("active");
-        panes[2].classList.add("active");
-      });
-    })();
+
+    function tabActive(event){
+          //console.log(event);
+          let tabPanes = document.querySelectorAll('.tab-pane');
+          for(let i=0; i<tabList.length; i++) {
+            tabList[i].classList.remove("active");
+            tabPanes[i].classList.remove("active");
+          }
+          event.target.classList.toggle("active");
+          document.getElementById(event.target.text.toLowerCase()).classList.toggle("active");
+        }
+
+    let tabList = document.querySelectorAll('.nav .nav-link');
+    for(let i=0; i<tabList.length; i++) {
+      tabList[i].addEventListener("click", tabActive);
+    }
   </script>
 </body>
 

@@ -158,36 +158,23 @@ navigation">
       })
     })();
 
-    (function() {
+    function tabActive(event){
+          //console.log(event);
+          let tabPanes = document.querySelectorAll('.tab-pane');
+          for(let i=0; i<tabList.length; i++) {
+            tabList[i].classList.remove("active");
+            tabPanes[i].classList.remove("active");
+          }
+          event.target.classList.toggle("active");
+          document.getElementById(event.target.text.toLowerCase()).classList.toggle("active");
+        }
 
-      let tabs = document.querySelectorAll(".nav-link[role='tab']");
-      let panes = document.querySelectorAll(".tab-pane");
+    let tabList = document.querySelectorAll('.nav .nav-link');
+    for(let i=0; i<tabList.length; i++) {
+      tabList[i].addEventListener("click", tabActive);
+    }
 
-      left.addEventListener("click", function() {
-        tabs[0].classList.add("active");
-        panes[0].classList.add("active");
-        tabs[1].classList.remove("active");
-        panes[1].classList.remove("active");
-        tabs[2].classList.remove("active");
-        panes[2].classList.remove("active");
-      });
-      middle.addEventListener("click", function() {
-        tabs[0].classList.remove("active");
-        panes[0].classList.remove("active");
-        tabs[1].classList.add("active");
-        panes[1].classList.add("active");
-        tabs[2].classList.remove("active");
-        panes[2].classList.remove("active");
-      });
-      right.addEventListener("click", function() {
-        tabs[0].classList.remove("active");
-        panes[0].classList.remove("active");
-        tabs[1].classList.remove("active");
-        panes[1].classList.remove("active");
-        tabs[2].classList.add("active");
-        panes[2].classList.add("active");
-      });
-    })();
+
   </script>
 </body>
 
