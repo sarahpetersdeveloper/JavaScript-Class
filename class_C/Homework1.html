@@ -142,6 +142,19 @@ navigation">
         $(".modal").hide();
       });
 
+      $(".nav-item.dropdown").click(function() {
+        event.preventDefault();
+        $(".nav-item.dropdown").toggleClass("show");
+      });
+
+      $('.nav-tabs .nav-link').click(function() {
+        $('.nav-tabs.active').removeClass('active');
+        $(this).toggleClass('active');
+        $('.tab-pane.active').removeClass('active');
+        let curPane = $(this).attr('href');
+        $(curPane).toggleClass('active');
+      });
+
     })();
   </script>
 </body>

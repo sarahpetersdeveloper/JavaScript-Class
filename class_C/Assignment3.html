@@ -141,6 +141,12 @@ navigation">
       $("#closeButton").click(function() {
         $(".modal").hide();
       });
+      $(".nav-item.dropdown").click(function() {
+        event.preventDefault();
+        $(".nav-item.dropdown").toggleClass("show");
+      });
+
+
 
     })();
   </script>

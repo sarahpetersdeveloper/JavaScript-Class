@@ -24,7 +24,7 @@
       padding: 1.5rem;
     }
   </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="myjquery.js"></script>
 </head>
 
 <body>
@@ -140,6 +140,19 @@ navigation">
 
       $("#closeButton").click(function() {
         $(".modal").hide();
+      });
+
+      $(".nav-item.dropdown").click(function() {
+        event.preventDefault();
+        $(".nav-item.dropdown").toggleClass("show");
+      });
+
+      $('.nav-tabs .nav-link').click(function() {
+        $('.nav-tabs.active').removeClass('active');
+        $(this).toggleClass('active');
+        $('.tab-pane.active').removeClass('active');
+        let curPane = $(this).attr('href');
+        $(curPane).toggleClass('active');
       });
 
     })();
