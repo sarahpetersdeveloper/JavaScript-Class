@@ -142,36 +142,62 @@
       let submitButton = document.getElementById("submit");
 
       submitButton.addEventListener("click", function(e) {
-        e.preventDefault();
+
         var user = document.querySelector("#username");
         var email = document.querySelector("#email");
         var pw1 = document.querySelector("#password");
         var pw2 = document.querySelector("#password_confirm");
         var agree = document.querySelector("[type='checkbox']")
 
-        if(username != /^[a-zA-Z0-9]*$/)
+        var isValid = true;
+
+        var usernameregex = /^[a-zA-Z0-9]*$/;
+        if(usernameregex.test(username))
         {
           showAlert();
+          UpdateIssue("Not a valid username");
           username.parentElement.classList.add("has-danger");
+          isValid = false;
         }
 
-        if(email != /\S+@\S+\.\S+/)
+        var emailregex = /\S+@\S+\.\S+/;
+        if(emailregex.test(email))
         {
           showAlert();
+          UpdateIssue("Not a valid email");
           email.parentElement.classList.add("has-danger");
+          isValid = false;
+        }
+
+        if(pw1.value =="" || pw2.value == "")
+        {
+          showAlert();
+          UpdateIssue("Passwords can't be empty");
+          pw1.parentElement.classList.add("has-danger");
+          pw2.parentElement.classList.add("has-danger");
+          isValid = false;
         }
 
         if (pw1.value != pw2.value ){
           showAlert();
+          UpdateIssue("Passwords do not match");
           pw1.parentElement.classList.add("has-danger");
           pw2.parentElement.classList.add("has-danger");
+          isValid = false;
         }
         if (agree.checked == false)
         {
           showAlert();
+          UpdateIssue("You must agree to the terms");
+          isValid = false;
+        }
+
+        if(! isValid)
+        {
+          e.preventDefault();
         }
         else {
-          console.log("i didn't make it");
+          console.log("The form is correct");
         }
       });
 
@@ -179,6 +205,15 @@
         var alert = document.querySelector("[role='alert']");
         alert.classList.remove("hide");
         alert.classList.add("show");
+      }
+
+      function UpdateIssue(errorText) {
+        var alert = document.querySelector("[role='alert']");
+
+        var error = document.createElement("p");
+        error.textContent = errorText;
+
+        alert.append(error);
       }
 
     })();
