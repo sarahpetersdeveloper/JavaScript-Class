@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>A sample page</title>
+ <script src="helper.js"></script>
+</head>
+<body>
+ <div id="main">
+
+ </div>
+ <script>
+
+      //(5 pts) Create capitalize function under String object prototype that capitalizes the string.
+      //E.g. "lorem ipsum".capitalize() should return "Lorem ipsum".
+
+      String.prototype.capitalize = function(){
+        return this.substring(0,1).toUpperCase() + this.substring(1);
+      };
+
+      var latin = "lorem ipsum";
+      echo("starting string: " + latin);
+      echo("after capitalizing: " + latin.capitalize());
+
+ </script>
+</body>
+</html>
